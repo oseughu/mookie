@@ -13,6 +13,7 @@ dotenv.config()
 //To access static files for the web application
 app.use(express.static('public'))
 
+//To parse the body of the request
 app.use(urlencoded({ extended: true }))
 
 // Setting the view engine
