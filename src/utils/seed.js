@@ -6,7 +6,7 @@ export const getItems = async () => {
   const url = 'https://webscraper.io/test-sites/e-commerce/more'
   const { data } = await axios.get(url)
   const $ = cheerio.load(data)
-  const items = $('div.row')
+  const items = $('div.col-md-9')
 
   const scrapedItems = []
 

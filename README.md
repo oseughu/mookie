@@ -1,5 +1,9 @@
-# Fundall Backend Support Engineer Task
+# Mookie Backend Developer Task
 
-This api was built to support the flow for an e-wallet prototype. It covers basic validation, security and data management. Built with Node, Express, MySQL2, and Sequelize. Hosted on Heroku and Clever Cloud.
+This app was built for the mookie backend dev assessment. It covers web scraping, security and data management. Built with Node, Express, Mongoose, Axios and Cheerio for web scraping. Hosted on Heroku and MongoDB Atlas.
 
-View the API documentation on postman [here.](https://documenter.getpostman.com/view/16097477/UVXnFtu1#9bd23a2c-6079-44f5-b926-40642528ad34)
+- Click on register to register a new user
+- Click on login to login to your account
+- Once logged in, you can now see the items web scraped from [here]('https://webscraper.io/test-sites/e-commerce/more')
+- The search bar abpove the list of items can look up any item using any character contained in its name.
+- New items will be populated everytime you log out and try to log back in.
