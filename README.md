@@ -11,6 +11,6 @@ This app was built for the mookie backend developer assessment. It covers web sc
 To run this app, you need to do the following:
 
 - Clone the repo by running `git clone https://github.com/oseughu/mookie.git`
-- Run `npm install`
-- Run `npm install -D`
+- Run `npm install` to install dependencies
+- Run `npm install -D` to install dev dependencies
 - Run `npm run dev` to start the dev server on port 3000
