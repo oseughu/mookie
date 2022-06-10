@@ -1,7 +1,7 @@
 {
   "name": "mookie",
   "version": "1.0.0",
-  "description": "",
+  "description": "mookie backend dev assessment",
   "main": "index.js",
   "type": "module",
   "imports": {
@@ -33,7 +33,6 @@
     "express-session": "^1.17.3",
     "mongoose": "^6.3.6",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2"
   }
 }
