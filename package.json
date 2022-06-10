@@ -4,6 +4,9 @@
   "description": "mookie backend dev assessment",
   "main": "index.js",
   "type": "module",
+  "keywords": [],
+  "author": "Ose Ughu",
+  "license": "MIT",
   "imports": {
     "#src/*": "./src/*.js",
     "#utils/*": "./src/utils/*.js",
@@ -18,12 +21,6 @@
     "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  },
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.11",
@@ -34,5 +31,8 @@
     "mongoose": "^6.3.6",
     "passport": "^0.6.0",
     "passport-local-mongoose": "^7.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
