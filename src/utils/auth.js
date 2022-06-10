@@ -1,5 +1,5 @@
-import passport from 'passport'
 import { User } from '#models/user.model'
+import passport from 'passport'
 
 export const passportConfig = app => {
   app.use(passport.initialize())

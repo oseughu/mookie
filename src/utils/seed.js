@@ -1,6 +1,6 @@
+import { Item } from '#models/item.model'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
-import { Item } from '#models/item.model'
 
 export const getItems = async () => {
   const url = 'https://webscraper.io/test-sites/e-commerce/more'

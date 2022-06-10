@@ -1,5 +1,5 @@
-import { Router } from 'express'
 import { register, registerPage } from '#controllers/register.controller'
+import { Router } from 'express'
 
 export const regRouter = Router()
 

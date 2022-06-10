@@ -1,9 +1,9 @@
+import { routes } from '#routes'
+import { passportConfig } from '#utils/auth'
+import { connectDb } from '#utils/db'
 import dotenv from 'dotenv'
 import express, { urlencoded } from 'express'
 import session from 'express-session'
-import { connectDb } from '#utils/db'
-import { routes } from '#routes'
-import { passportConfig } from '#utils/auth'
 
 const port = process.env.PORT || 3000
 const app = express()

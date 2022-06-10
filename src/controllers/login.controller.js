@@ -1,7 +1,7 @@
-import { User } from '#models/user.model'
 import { Item } from '#models/item.model'
-import passport from 'passport'
+import { User } from '#models/user.model'
 import { getItems } from '#utils/seed'
+import passport from 'passport'
 
 export const login = async (req, res) => {
   const { email, password } = req.body
