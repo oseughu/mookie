@@ -14,7 +14,7 @@ export const itemsPage = async (req, res) => {
       }
     })
   } else {
-    res.redirect('/login')
+    res.redirect('login')
   }
 }
 
@@ -38,6 +38,6 @@ export const searchItems = (req, res) => {
       }
     )
   } else {
-    res.redirect('/login')
+    res.redirect('login')
   }
 }

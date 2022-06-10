@@ -6,12 +6,12 @@ export const register = async (req, res) => {
   const { username, password, confirmPassword } = req.body
 
   if (password !== confirmPassword) {
-    res.redirect('/register')
+    res.redirect('register')
   } else {
     User.register({ username }, password, (err, user) => {
       if (err) {
         console.log(err)
-        res.redirect('/register')
+        res.redirect('register')
       } else {
         passport.authenticate('local')(req, res, async () => {
           await getItems()
