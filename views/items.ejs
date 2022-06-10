@@ -1,0 +1,55 @@
+<%- include('partials/header') %>
+
+  <div class="jumbotron text-center">
+    <div class="container">
+
+      <h1 class="display-3">Mookie</h1>
+
+      <form action="/items" method="POST">
+
+        <div class="form-group">
+          <div>
+            <input type="text" class="form-control text-center" name="searchQuery" placeholder="Search Items">
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-lg btn-light special">Search</button>
+      </form>
+
+      <hr>
+
+      <div>
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0lax">Name</th>
+              <th class="tg-0lax">Description</th>
+              <th class="tg-0lax">Price</th>
+            </tr>
+          </thead>
+          <% items.forEach((item)=> { %>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">
+                  <%= item.name %>
+                </td>
+                <td class="tg-0lax">
+                  <%= item.description %>
+                </td>
+                <td class="tg-0lax">
+                  <%= item.price %>
+                </td>
+              </tr>
+            </tbody>
+            <% }) %>
+        </table>
+      </div>
+
+      <hr>
+
+      <a class=" btn btn-dark btn-lg special" href="/logout" role="button">Log Out</a>
+
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>

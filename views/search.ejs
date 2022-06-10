@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+  <div class="jumbotron text-center">
+    <div class="container">
+
+      <h1 class="display-3">Mookie</h1>
+
+      <div>
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0lax">Name</th>
+              <th class="tg-0lax">Description</th>
+              <th class="tg-0lax">Price</th>
+            </tr>
+          </thead>
+          <% searchResults.forEach((item)=> { %>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">
+                  <%= item.name %>
+                </td>
+                <td class="tg-0lax">
+                  <%= item.description %>
+                </td>
+                <td class="tg-0lax">
+                  <%= item.price %>
+                </td>
+              </tr>
+            </tbody>
+            <% }) %>
+        </table>
+      </div>
+
+      <hr>
+
+      <a class=" btn btn-light btn-lg special" href="/logout" role="button">Log Out</a>
+      <a class="btn btn-dark btn-lg special" href="/items" role="button">Home</a>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
