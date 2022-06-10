@@ -7,3 +7,10 @@ This app was built for the mookie backend developer assessment. It covers web sc
 - Once logged in, you can now see the items web scraped from [here]('https://webscraper.io/test-sites/e-commerce/more')
 - The search bar abpove the list of items can look up any item using any character(s) contained in its name.
 - New items will be populated everytime you log out and try to log back in.
+
+To run this app, you need to do the following:
+
+- Clone the repo by running `git clone https://github.com/oseughu/mookie.git`
+- Run `npm install`
+- Run `npm install -D`
+- Run `npm run dev` to start the dev server on port 3000
