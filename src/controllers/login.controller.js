@@ -14,7 +14,7 @@ export const login = async (req, res) => {
 
   req.login(user, err => {
     if (err) {
-      console.log(err)
+      res.redirect('login')
     } else {
       passport.authenticate('local')(req, res, async () => {
         await getItems()
