@@ -12,5 +12,4 @@ To run this locally, you need to do the following:
 
 - Clone the repo by running `git clone https://github.com/oseughu/mookie.git`
 - Run `npm install` to install dependencies.
-- Run `npm install -D` to install dev dependencies.
 - Run `npm run dev` to start the dev server on port 3000.
