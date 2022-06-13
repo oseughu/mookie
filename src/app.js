@@ -1,14 +1,12 @@
 import { routes } from '#routes'
 import { passportConfig } from '#utils/auth'
 import { connectDb } from '#utils/db'
-import dotenv from 'dotenv'
+import 'dotenv/config'
 import express, { urlencoded } from 'express'
 import session from 'express-session'
 
 const port = process.env.PORT || 3000
 const app = express()
-
-dotenv.config()
 
 //To access static files for the web application
 app.use(express.static('public'))
