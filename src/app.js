@@ -8,6 +8,8 @@ import session from 'express-session'
 const port = process.env.PORT || 3000
 const app = express()
 
+connectDb()
+
 //To access static files for the web application
 app.use(express.static('public'))
 
@@ -31,6 +33,5 @@ passportConfig(app)
 app.use(routes)
 
 app.listen(port, () => {
-  connectDb()
   console.log('Server started successfully. Connected to MongoDB.')
 })

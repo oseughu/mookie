@@ -3,7 +3,7 @@ import { User } from '#models/user.model'
 import { getItems } from '#utils/seed'
 import passport from 'passport'
 
-export const login = async (req, res) => {
+export const login = (req, res) => {
   const { email, password } = req.body
 
   const user = new User({
