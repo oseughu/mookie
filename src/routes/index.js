@@ -6,7 +6,4 @@ import { Router } from 'express'
 
 export const routes = Router()
 
-routes.use(homeRouter)
-routes.use(itemRouter)
-routes.use(loginRouter)
-routes.use(regRouter)
+routes.use(homeRouter, itemRouter, loginRouter, regRouter)

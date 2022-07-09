@@ -12,7 +12,7 @@ export const login = (req, res) => {
     password
   })
 
-  req.login(user, err => {
+  req.login(user, (err) => {
     if (err) {
       res.redirect('login')
     } else {
@@ -29,7 +29,7 @@ export const loginPage = (req, res) => {
 }
 
 export const logout = (req, res, next) => {
-  req.logout(async err => {
+  req.logout(async (err) => {
     if (err) {
       return next(err)
     }
