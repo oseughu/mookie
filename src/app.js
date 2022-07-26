@@ -4,7 +4,10 @@ import { connectDb } from '#utils/db'
 import 'dotenv/config'
 import express, { urlencoded } from 'express'
 import session from 'express-session'
+import path from 'path'
+import * as url from 'url'
 
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 const port = process.env.PORT || 3000
 const app = express()
 
@@ -20,7 +23,7 @@ app.use(urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
 
 // Setting the views directory
-app.set('views', path.join(__dirname, '/src/views'))
+app.set('views', path.join(__dirname, 'views'))
 
 //Use express-session to save cookies and user data
 app.use(
@@ -36,5 +39,5 @@ passportConfig(app)
 app.use(routes)
 
 app.listen(port, () => {
-  console.log('Server started successfully. Connected to MongoDB.')
+  console.log(`Server running on port ${port}. Connected to MongoDB.`)
 })
