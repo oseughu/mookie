@@ -19,6 +19,9 @@ app.use(urlencoded({ extended: true }))
 // Setting the view engine
 app.set('view engine', 'ejs')
 
+// Setting the views directory
+app.set('views', path.join(__dirname, '/src/views'))
+
 //Use express-session to save cookies and user data
 app.use(
   session({
