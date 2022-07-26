@@ -2,7 +2,7 @@ import { routes } from '#routes'
 import { passportConfig } from '#utils/auth'
 import { connectDb } from '#utils/db'
 import 'dotenv/config'
-import express, { urlencoded } from 'express'
+import express from 'express'
 import session from 'express-session'
 import path from 'path'
 import * as url from 'url'
@@ -17,7 +17,7 @@ connectDb()
 app.use(express.static('public'))
 
 //To parse the body of the request
-app.use(urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }))
 
 // Setting the view engine
 app.set('view engine', 'ejs')
