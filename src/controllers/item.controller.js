@@ -25,6 +25,7 @@ export const searchItems = (req, res) => {
     Item.find(
       // Search all images and return all that contain the search query in the name
       { name: { $regex: searchQuery, $options: 'i' } },
+      { description: { $regex: searchQuery, $options: 'i' } },
       (err, foundItems) => {
         if (!err) {
           if (foundItems) {
