@@ -1,6 +1,6 @@
-# Mookie Backend Developer Task
+# Mookie Webscraper
 
-This app was built for the mookie backend developer assessment. It covers web scraping, security and data management. Built with Node, Express, Mongoose, Axios and Cheerio for web scraping. Hosted on Heroku and MongoDB Atlas.
+This app covers web scraping, security and data management. Built with Node, Express, Mongoose, Axios and Cheerio for web scraping. Hosted on Heroku and MongoDB Atlas.
 
 - Click on register to register a new user.
 - Click on login to login to your account.
