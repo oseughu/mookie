@@ -23,7 +23,7 @@ export const searchItems = (req, res) => {
 
   if (req.isAuthenticated()) {
     Item.find(
-      // Search all images and return all that contain the search query in the name
+      // Search all items and return all that contain the search query in the name
       { name: { $regex: searchQuery, $options: 'i' } },
       { description: { $regex: searchQuery, $options: 'i' } },
       (err, foundItems) => {
