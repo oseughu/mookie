@@ -1,4 +1,4 @@
-import { Item } from '#models/item.model'
+import Item from '#models/item.model'
 
 export const itemsPage = async (req, res) => {
   if (req.isAuthenticated()) {
@@ -20,25 +20,26 @@ export const itemsPage = async (req, res) => {
 
 export const searchItems = (req, res) => {
   const { searchQuery } = req.body
-
-  if (req.isAuthenticated()) {
-    Item.find(
-      // Search all items and return all that contain the search query in the name
-      { name: { $regex: searchQuery, $options: 'i' } },
-      { description: { $regex: searchQuery, $options: 'i' } },
-      (err, foundItems) => {
-        if (!err) {
-          if (foundItems) {
-            res.render('search', {
-              searchResults: foundItems,
-              pageTitle: 'Search Results',
-              year: new Date().getFullYear()
-            })
-          }
+  Item.find(
+    {
+      // Search all items and return all that contain the search query in the name or description
+      $or: [
+        { name: { $regex: searchQuery, $options: 'i' } },
+        { description: { $regex: searchQuery, $options: 'i' } }
+      ]
+    },
+    (err, foundItems) => {
+      if (!err) {
+        if (foundItems) {
+          res.render('search', {
+            searchResults: foundItems,
+            pageTitle: 'Search Results',
+            year: new Date().getFullYear()
+          })
         }
+      } else {
+        console.log(err)
       }
-    )
-  } else {
-    res.redirect('login')
-  }
+    }
+  )
 }

@@ -1,7 +1,7 @@
-import { User } from '#models/user.model'
+import User from '#models/user.model'
 import passport from 'passport'
 
-export const passportConfig = (app) => {
+const passportConfig = (app) => {
   app.use(passport.initialize())
   app.use(passport.session())
 
@@ -17,3 +17,5 @@ export const passportConfig = (app) => {
     })
   })
 }
+
+export default passportConfig

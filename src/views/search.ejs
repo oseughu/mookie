@@ -6,30 +6,34 @@
       <h1 class="display-3">Mookie</h1>
 
       <div>
-        <table class="tg">
-          <thead>
-            <tr>
-              <th class="tg-0lax">Name</th>
-              <th class="tg-0lax">Description</th>
-              <th class="tg-0lax">Price</th>
-            </tr>
-          </thead>
-          <% searchResults.forEach((item)=> { %>
-            <tbody>
+        <% if (searchResults.length> 0) { %>
+          <table class="tg">
+            <thead>
               <tr>
-                <td class="tg-0lax">
-                  <%= item.name %>
-                </td>
-                <td class="tg-0lax">
-                  <%= item.description %>
-                </td>
-                <td class="tg-0lax">
-                  <%= item.price %>
-                </td>
+                <th class="tg-0lax">Name</th>
+                <th class="tg-0lax">Description</th>
+                <th class="tg-0lax">Price</th>
               </tr>
-            </tbody>
-            <% }) %>
-        </table>
+            </thead>
+            <% searchResults.forEach((item)=> { %>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">
+                    <%= item.name %>
+                  </td>
+                  <td class="tg-0lax">
+                    <%= item.description %>
+                  </td>
+                  <td class="tg-0lax">
+                    <%= item.price %>
+                  </td>
+                </tr>
+              </tbody>
+              <% }) %>
+          </table>
+          <%} else { %>
+            <p> No items match your search.</p>
+            <% } %>
       </div>
 
       <hr>

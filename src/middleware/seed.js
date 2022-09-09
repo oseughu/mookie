@@ -1,8 +1,8 @@
-import { Item } from '#models/item.model'
+import Item from '#models/item.model'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 
-export const getItems = async () => {
+const getItems = async (req, res, next) => {
   const url = 'https://webscraper.io/test-sites/e-commerce/more'
   const { data } = await axios.get(url)
   const $ = cheerio.load(data)
@@ -29,4 +29,8 @@ export const getItems = async () => {
       scrapedItems.push(newItems)
     }
   }
+
+  next()
 }
+
+export default getItems

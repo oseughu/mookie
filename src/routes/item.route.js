@@ -1,7 +1,11 @@
 import { itemsPage, searchItems } from '#controllers/item.controller'
+import checkAuth from '#middleware/checkAuth'
+import getItems from '#middleware/seed'
 import { Router } from 'express'
 
-export const itemRouter = Router()
+const itemRouter = Router()
 
-itemRouter.get('/items', itemsPage)
-itemRouter.post('/items', searchItems)
+itemRouter.get('/items', checkAuth, getItems, itemsPage)
+itemRouter.post('/items', checkAuth, searchItems)
+
+export default itemRouter
