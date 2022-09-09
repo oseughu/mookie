@@ -2,10 +2,11 @@ import Item from '#models/item.model'
 import User from '#models/user.model'
 import passport from 'passport'
 
-export const register = async (req, res) => {
+export const register = (req, res) => {
   const { username, password, confirmPassword } = req.body
 
   if (password !== confirmPassword) {
+    res.send('Passwords do not match')
     res.redirect('register')
   } else {
     User.register({ username }, password, (err, user) => {
@@ -13,7 +14,7 @@ export const register = async (req, res) => {
         console.log(err)
         res.redirect('register')
       } else {
-        passport.authenticate('local')(req, res, async () => {
+        passport.authenticate('local')(req, res, () => {
           res.redirect('items')
         })
       }
@@ -39,9 +40,10 @@ export const login = (req, res) => {
 
   req.login(user, (err) => {
     if (err) {
+      res.send('Error logging in')
       res.redirect('login')
     } else {
-      passport.authenticate('local')(req, res, async () => {
+      passport.authenticate('local')(req, res, () => {
         res.redirect('items')
       })
     }

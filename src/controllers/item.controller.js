@@ -1,6 +1,6 @@
 import Item from '#models/item.model'
 
-export const itemsPage = async (req, res) => {
+export const itemsPage = (req, res) => {
   Item.find({}, (err, foundItems) => {
     if (err) {
       res.send(err)
