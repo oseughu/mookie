@@ -1,21 +1,17 @@
 import Item from '#models/item.model'
 
 export const itemsPage = async (req, res) => {
-  if (req.isAuthenticated()) {
-    Item.find({}, (err, foundItems) => {
-      if (err) {
-        res.send(err)
-      } else {
-        res.render('items', {
-          items: foundItems,
-          pageTitle: 'Mookie',
-          year: new Date().getFullYear()
-        })
-      }
-    })
-  } else {
-    res.redirect('login')
-  }
+  Item.find({}, (err, foundItems) => {
+    if (err) {
+      res.send(err)
+    } else {
+      res.render('items', {
+        items: foundItems,
+        pageTitle: 'Mookie',
+        year: new Date().getFullYear()
+      })
+    }
+  })
 }
 
 export const searchItems = (req, res) => {
