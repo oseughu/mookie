@@ -6,7 +6,6 @@ export const register = (req, res) => {
   const { username, password, confirmPassword } = req.body
 
   if (password !== confirmPassword) {
-    res.send('Passwords do not match')
     res.redirect('register')
   } else {
     User.register({ username }, password, (err, user) => {
@@ -40,7 +39,6 @@ export const login = (req, res) => {
 
   req.login(user, (err) => {
     if (err) {
-      res.send('Error logging in')
       res.redirect('login')
     } else {
       passport.authenticate('local')(req, res, () => {
