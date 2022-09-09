@@ -16,6 +16,7 @@ export const itemsPage = async (req, res) => {
 
 export const searchItems = (req, res) => {
   const { searchQuery } = req.body
+
   Item.find(
     {
       // Search all items and return all that contain the search query in the name or description
@@ -25,16 +26,14 @@ export const searchItems = (req, res) => {
       ]
     },
     (err, foundItems) => {
-      if (!err) {
-        if (foundItems) {
-          res.render('search', {
-            searchResults: foundItems,
-            pageTitle: 'Search Results',
-            year: new Date().getFullYear()
-          })
-        }
+      if (err) {
+        res.send(err)
       } else {
-        console.log(err)
+        res.render('search', {
+          searchResults: foundItems,
+          pageTitle: 'Search Results',
+          year: new Date().getFullYear()
+        })
       }
     }
   )
